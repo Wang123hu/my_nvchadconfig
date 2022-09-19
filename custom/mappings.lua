@@ -35,5 +35,10 @@ M.aerial = {
     },
 }
 -- more keybinds!
+M.hop = {
+  n={
+    ["<leader>gl"] = {"<cmd>HopLineStart<CR>", "easy to go to a line"}
+  },
+}
 
 return M

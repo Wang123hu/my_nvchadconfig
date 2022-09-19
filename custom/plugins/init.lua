@@ -60,10 +60,21 @@ return {
     run = "cd app && npm install",
     setup = function()
       vim.g.mkdp_filetypes = { "markdown" }
-      vim.api.nvim_exec([[
+      vim.api.nvim_exec(
+        [[
       let g:mkdp_browser = 'google-chrome'
-      ]], true)
+      ]],
+        true
+      )
     end,
     ft = { "markdown" },
+  },
+  -- Install hop
+  ["phaazon/hop.nvim"] = {
+    branch = "v2", -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require("custom.plugins.configs.hop")
+    end,
   },
 }
