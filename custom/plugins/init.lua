@@ -38,36 +38,20 @@ return {
 
   ["folke/which-key.nvim"] = { disable = false },
   -- Install debugger
-  ["sakhnik/nvim-gdb"] = 
-     {
+  ["sakhnik/nvim-gdb"] = {
+    cmd = {"GdbStartPDB", "GdbStart"},
     run = "./install.sh",
     config = function()
-        require("custom.plugins.configs.nvimgdb")
+      require "custom.plugins.configs.nvimgdb"
     end,
-    -- cmd = {
-    --   "GdbStart",
-    --   "GdbStartLLDB",
-    --   "GdbStartPDB",
-    --   "GdbStartBashDB",
-    --   "GdbStartRR",
-    --   "GdbDebugStop",
-    --   "Gdb",
-    --   "GdbBreakpointToggle",
-    --   "GdbBreakpointClearAll",
-    --   "GdbContinue",
-    --   "GdbNext",
-    --   "GdbStep",
-    --   "GdbFinish",
-    --   "GdbFrame",
-    --   "GdbUntil",
-    --   "GdbFrameUp",
-    --   "GdbFrameDown",
-    --   "GdbInterrupt",
-    --   "GdbEvalWord",
-    --   "GdbEvalRange",
-    --   "GdbCreateWatch",
-    --   "GdbLopenBreakpoints",
-    --   "GdbLopenBacktrace",
-    -- },
+  },
+
+  -- Install outline view
+  ["stevearc/aerial.nvim"] = {
+    cmd = "AerialToggle",
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.plugins.configs.aerial"
+    end,
   },
 }
