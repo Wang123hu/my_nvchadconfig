@@ -39,7 +39,7 @@ return {
   ["folke/which-key.nvim"] = { disable = false },
   -- Install debugger
   ["sakhnik/nvim-gdb"] = {
-    cmd = {"GdbStartPDB", "GdbStart"},
+    cmd = { "GdbStartPDB", "GdbStart" },
     run = "./install.sh",
     config = function()
       require "custom.plugins.configs.nvimgdb"
@@ -53,5 +53,23 @@ return {
     config = function()
       require "custom.plugins.configs.aerial"
     end,
+  },
+
+  -- Install markdown preview
+  ["iamcco/markdown-preview.nvim"] = {
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+      vim.api.nvim_exec([[
+      let g:mkdp_open_to_the_world = 1
+      let g:mkdp_open_ip = '127.0.0.1' " change to you vps or vm ip
+      let g:mkdp_port = 8080
+      function! g:EchoUrl(url)
+          :echo a:url
+      endfunction
+      let g:mkdp_browserfunc = 'g:EchoUrl'
+      ]], true)
+    end,
+    ft = { "markdown" },
   },
 }
