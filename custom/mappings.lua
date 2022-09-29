@@ -2,7 +2,7 @@ local M = {}
 
 M.general = {
   n = {
-    ["<C-v>"] = { "<cmd>split<CR>", "horizontal split" },
+    -- ["<C-v>"] = { "<cmd>split<CR>", "horizontal split" },
     ["<C-h>"] = { "<cmd>vsplit<CR>", "vertical split" },
     ["<leader>h"] = { "<C-w>h", "move left" },
     ["<leader>l"] = { "<C-w>l", "move right" },
