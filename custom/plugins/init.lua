@@ -69,12 +69,19 @@ return {
     end,
     ft = { "markdown" },
   },
-  -- Install hop
+  -- Install hop for quick moveing
   ["phaazon/hop.nvim"] = {
     branch = "v2", -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require("custom.plugins.configs.hop")
+    end,
+  },
+  -- Install doge for docstring generation 
+  ['kkoomen/vim-doge'] = {
+    run = ":call doge#install()",
+    config = function ()
+      require("custom.plugins.configs.doge")
     end,
   },
 }
